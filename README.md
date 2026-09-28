@@ -18,6 +18,7 @@ Diese Wissensbasis bündelt prüfungsrelevante Grundlagen für die gestreckte Ab
 10. [WiSo: Wirtschaft und Gesellschaft](docs/wiso/wirtschaft-und-gesellschaft.md)
 11. [Projektarbeit, Präsentation und Fachgespräch](docs/projektarbeit.md)
 12. [Vorhandene Prüfungsunterlagen](pruefungen/README.md)
+13. [Unterrichtsmaterialien der Berufsschule](unterricht/README.md)
 
 ## Prüfungsbereiche
 

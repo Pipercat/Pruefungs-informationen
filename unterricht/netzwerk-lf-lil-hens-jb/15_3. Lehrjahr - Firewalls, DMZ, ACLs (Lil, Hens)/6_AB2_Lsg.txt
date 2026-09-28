@@ -1,0 +1,47 @@
+Fa0/0
+
+	Liste 100 fuer inbound an Fa0/0
+		access-list 100 deny icmp host 172.16.70.35 host 192.168.90.36
+		
+		access-list 100 deny tcp 172.17.70.0 0.0.0.255 192.168.90.0 0.0.0.255 eq 21
+		
+		access-list 100 permit tcp any host 172.16.70.1 eq 22
+		access-list 100 deny tcp any any eq 22
+	
+		access-list 100 permit ip any any
+
+	Liste 101 fuer outbound an Fa0/0
+		access-list 101 deny icmp host 192.168.90.36 host 172.16.70.35
+		access-list 101 deny tcp 192.168.90.0 0.0.0.255 172.17.70.0 0.0.0.255 eq 21
+		access-list 101 permit udp 192.168.90.128 0.0.0.127 172.16.70.0 0.0.0.7
+		access-list 101 deny udp any 172.16.70.0 0.0.0.7
+	
+		access-list 101 permit tcp host 172.16.70.1 any eq 22
+		access-list 101 deny tcp any any eq 22
+	
+		access-list 101 permit ip any any
+	
+Fa0/1
+
+	Liste 102 fuer inbound an Fa0/1
+	
+		access-list 102 deny icmp host 192.168.90.36 host 172.16.70.35
+		access-list 102 deny tcp 192.168.90.0 0.0.0.255 172.17.70.0 0.0.0.255 eq 21
+		access-list 102 permit udp 192.168.90.128 0.0.0.127 172.16.70.0 0.0.0.7
+		access-list 102 deny udp any 172.16.70.0 0.0.0.7
+		
+		access-list 102 permit tcp any host 192.168.90.2 eq 22
+		access-list 102 deny tcp any any eq 22
+	
+		access-list 102 permit ip any any
+
+	Liste 103 fuer outbound an Fa0/1
+	
+		access-list 103 deny icmp host 172.16.70.35 host 192.168.90.36
+		access-list 103 deny tcp 172.17.70.0 0.0.0.255 192.168.90.0 0.0.0.255 eq 21
+	
+		access-list 101 permit tcp host 192.168.90.2 any eq 22
+		access-list 101 deny tcp any any eq 22
+	
+		access-list 103 permit ip any any
+	

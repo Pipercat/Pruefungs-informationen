@@ -1,0 +1,85 @@
+AB1 - Aufgabe 8
+
+i) Ausführlicher Rechenweg
+
+	"Decimal Dotted Subnetzmaske" aus Präfix bestimmen:
+	/25 --> 1111 1111.1111 1111.1111 1111.1000 0000 --> 25 führende 1en
+		   255   .   255   .   255   .   128
+
+	Netzadresse bestimmen: Netzadresse = IP-Adresse in Binärschreibweise & Subnetzmaske in Binärschreibweise
+	 Schritt 1: Subnetzmaske in Binärschreibweise --> 1111 1111.1111 1111.1111 1111.1000 0000 (siehe oben)
+	 Schritt 2: IP-Adresse in Binärschreibweise
+			192.168.200.130 --> nur für letztes Byte hier relevant --> "192.168.200."1000 0010
+			
+	 Schritt: VerUNDung ausrechnen
+		1111 1111.1111 1111.1111 1111.1000 0000
+	&	   "192" .   "168" .  "200"  .1000 0010
+	------------------------------------------------
+	=	   "192" .   "168" .  "200"  .1000 0000
+	Netzadresse: 192.168.200.128
+
+	--> Erster Host: "192" .   "168" .  "200"  .1000 0001 --> 192.168.200.129 (Fehler im Arbeitsblatt, "130" ist nicht der erste Host, sondern der 2. Host)
+
+	Alle Hosts: 192.168.200.(128 + x)
+	
+	--> Broadcast: "192" .   "168" .  "200"  .1111 1111 --> 192.168.200.255
+	
+
+j) Ausführlicher Rechenweg
+	Ermittlung der Netzadresse durch VerUNDung
+		 172. 25. 65.0 -->   "172"  .   "25"  .0100 0001.0000 0000
+	 &   255.255.192.0 --> 1111 1111.1111 1111    .1100 0000.0000 0000 ( --> 18 führende 1en --> /18 )
+		----------------------------------------------------------
+						      .0100 0000.0000 0000
+	--> Netzadresse: 172.25.64.0
+
+	--> Alle IP-Adressen: "172.25".01xx xxxx.xxxx xxxx.xxxx xxxx
+		Für Netzadresse: alle "xe" sind 0
+		Für Broadcast: alle "xe" sind 1
+		
+	--> Erster Host: "172.25".0100 0000.0000 0000.0000 0001 --> 172.25.64.1  (Fehler im Arbeitsblatt, "172.25.65.0" wäre zwar ein Host, aber nicht der erste Host)
+	--> Broadcast:  "172.25".0111 1111.1111 1111.1111 1111 --> 172.25.(255-128).255 = 172.25.127.255
+	--> Letzter Host: 172.25.127.254
+
+k) Ausführlicher Rechenweg
+
+	Nur 6 Hosts --> 3 Hostbits (2^3-2=8-2=6)
+
+	32-3 = 29
+
+	--> Präfix: /29 
+	--> Subnetzmaske: 1111 1111.1111 1111.1111 1111.1111 1000 (29 führende 1en) --> 255.255.255.248
+
+	Alle IP-Adressen: "192.168.255".0000 0xxx
+
+	Broadcast: "192.168.255".0000 0111 --> 192.168.255.7
+	Letzter Host: 192.168.255.6
+	Erster Host:"192.168.255".0000 0001 --> 192.168.255.1
+	
+	Check: Zwischen 192.168.255.0 und 192.168.255.7 liegen nur 6 Host-Adressen --> richtig.
+	
+l) Ausführlicher Rechenweg	
+	
+	15 Hostbits
+	
+	--> Netzbits: 32-15 = 17 
+	--> Präfix: /17
+	
+	Subnetzmaske bestimmen:
+	--> 1111 1111.1111 1111.1000 0000.0000 0000 (17 führende 1en)
+	-->    255   .   255   .   128   .    0
+	
+	Netzadresse bestimmen:
+	  1010 1100.0001 0000.0000 0000.0000 0001 (IP-Adresse binär)
+	& 1111 1111.1111 1111.1000 0000.0000 0000 (Subnetzmaske binär)
+	------------------------------------------
+	= 1010 1100.0001 0000.0000 0000.0000 0000
+	--> Netzadresse: 172.16.0.0
+	
+	Alle IP-Adressen: "172.16".0xxx xxxx.xxxx xxxx
+		Für Netzadresse: alle "xe" sind 0
+		Für Broadcast: alle "xe" sind 1
+	
+	--> Erster Host: "172.16".0000 0000.0000 0001 --> 172.16.0.1 (kennen wir schon)
+	--> Broadcast: "172.16".0111 1111.1111 1111 --> 172.16.127.255 (Achtung: Das erste Bit vom 4. Byte ist hier ein Netzbit, das mit 0 vorgegeben ist. Deshalb kann höchstens 127 und nicht 255 herauskommen.)
+	--> Letzter Host: 172.16.127.254
