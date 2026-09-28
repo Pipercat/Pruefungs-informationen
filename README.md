@@ -18,7 +18,17 @@ Diese Wissensbasis bündelt prüfungsrelevante Grundlagen für die gestreckte Ab
 10. [WiSo: Wirtschaft und Gesellschaft](docs/wiso/wirtschaft-und-gesellschaft.md)
 11. [Projektarbeit, Präsentation und Fachgespräch](docs/projektarbeit.md)
 12. [Vorhandene Prüfungsunterlagen](pruefungen/README.md)
-13. [Unterrichtsmaterialien der Berufsschule](unterricht/README.md)
+13. [Lernmaterial der Berufsschule nach Themen](lernmaterial/README.md)
+
+## Passendes Lernmaterial zu den Lerntexten
+
+| Lerntext | Material |
+| --- | --- |
+| Netzwerkmodelle, IP, Switching, Routing, Dienste | [lernmaterial/netzwerk](lernmaterial/netzwerk/) |
+| Monitoring, Sicherheit, Verfügbarkeit | [lernmaterial/it-sicherheit](lernmaterial/it-sicherheit/), [lernmaterial/systeme](lernmaterial/systeme/) |
+| Rechenwissen | [Subnetting](lernmaterial/netzwerk/02-subnetting-vlan-stp-dhcp-dns-routing/), [Break-even/TCO](lernmaterial/bwl-und-rechnungswesen/) |
+| WiSo, Wirtschaft | [lernmaterial/bwl-und-rechnungswesen](lernmaterial/bwl-und-rechnungswesen/), [BWL-Prüfungsaufgaben](lernmaterial/pruefungsvorbereitung/teil-2/) |
+| Projektarbeit | [lernmaterial/projektmanagement](lernmaterial/projektmanagement/), [lernmaterial/it-service-management](lernmaterial/it-service-management/) |
 
 ## Prüfungsbereiche
 
